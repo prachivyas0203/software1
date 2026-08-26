@@ -1,2 +1,3 @@
-He = "Hello World!" 
-print(He)
+name = input("Give name: ")
+greeting = "Hello, " +name + "!"
+print(greeting) 
