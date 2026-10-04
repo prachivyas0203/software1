@@ -1,0 +1,14 @@
+intro.txt
+      ↓
+introduction is displayed
+
+instructions.txt
+      ↓
+instructions are displayed
+
+player enters name
+      ↓
+program checks game_save.txt
+      ↓
+saved game found → continue
+saved game not found → new game

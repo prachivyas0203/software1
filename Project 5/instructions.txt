@@ -1,0 +1,6 @@
+GAME INSTRUCTIONS
+
+1. Enter your name when the game starts.
+2. Choose an action when asked.
+3. Your progress will be saved automatically.
+4. You can continue your game later by entering your name.
