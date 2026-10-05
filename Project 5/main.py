@@ -1,3 +1,4 @@
+import json
 import os
 
 
@@ -7,18 +8,23 @@ def read_file(filename):
 
 
 def save_game(name, score):
-    with open("savegame.txt", "w") as file:
-        file.write(name + "\n")
-        file.write(str(score))
-
+    savedata = {
+        "name": name,
+        "score": score
+    }
+    with open("savedata_new.json", "w") as file:
+            json.dump(savedata["name"], file)
+    with open("savedata_new.json", "w") as file:
+            json.dump(savedata["score"], file)
 
 def load_game(name):
-    if not os.path.exists("savegame.txt"):
+    if not os.path.exists("savedata_new.json"):
         return None
 
-    with open("savegame.txt", "r") as file:
-        saved_name = file.readline().strip()
-        saved_score = file.readline().strip()
+    with open("savedata_new.json", "r") as file:
+        data = json.load(file)
+        saved_name = data["name"]
+        saved_score = data["score"]
 
     if saved_name == name:
         return int(saved_score)
@@ -26,8 +32,8 @@ def load_game(name):
     return None
 
 
-print(read_file("intro.txt"))
-print(read_file("instructions.txt"))
+#print(read_file("intro.txt"))
+#print(read_file("instructions.txt"))
 
 name = input("Enter your name: ")
 
