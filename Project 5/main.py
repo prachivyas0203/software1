@@ -13,9 +13,8 @@ def save_game(name, score):
         "score": score
     }
     with open("savedata_new.json", "w") as file:
-            json.dump(savedata["name"], file)
-    with open("savedata_new.json", "w") as file:
-            json.dump(savedata["score"], file)
+        json.dump(savedata, file)
+
 
 def load_game(name):
     if not os.path.exists("savedata_new.json"):
